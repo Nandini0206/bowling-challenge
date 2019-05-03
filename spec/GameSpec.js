@@ -9,5 +9,9 @@ describe('Game', function(){
     it('starts with a score of 0', function(){
       expect(game.score).toEqual(0);
     });
+
+    it('starts of with frame', function(){
+      expect(game.frame).toEqual(0);
+    });
   });
 });
