@@ -76,6 +76,12 @@ In code review we'll be hoping to see:
 
 Reviewers will potentially be using this [code review rubric](docs/review.md).  Note that referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want.
 
+
+## Steps
+
+- Started with gutter Game
+- Add a calculating score element
+
 ## Logic
 
 - Frame initialises as empty
