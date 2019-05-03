@@ -79,8 +79,9 @@ Reviewers will potentially be using this [code review rubric](docs/review.md).  
 
 ## Steps
 
-- Started with gutter Game
-- Add a calculating score element
+- Started with initial score of 0 and frame of 0
+-
+-
 
 ## Logic
 
