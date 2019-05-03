@@ -10,8 +10,8 @@ describe('Game', function(){
       expect(game.score).toEqual(0);
     });
 
-    it('starts of with frame', function(){
-      expect(game.frame).toEqual(0);
+    it('starts of with empty frames', function(){
+      expect(game.frame).toEqual([]);
     });
   });
 });
