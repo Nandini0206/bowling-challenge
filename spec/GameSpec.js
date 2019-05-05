@@ -17,20 +17,20 @@ describe('Game', function(){
 
   describe('roll',function(){
     it('adds first roll to frame', function(){
-    game.addroll(6);
+    game.addRoll(6);
     expect(game.frame).toEqual([6])
     });
 
     it('adds second roll to frame', function(){
-    game.addroll(6);
-    game.addroll(2);
+    game.addRoll(6);
+    game.addRoll(2);
     expect(game.frame).toEqual([6,2]);
     });
 
     it('adds no more than 2 rolls to a frame', function(){
-    game.addroll(4);
-    game.addroll(3);
-    expect(function(){game.addroll(1)}).toThrowError('Frame already contains two rolls');
+    game.addRoll(4);
+    game.addRoll(3);
+    expect(function(){game.addRoll(1)}).toThrowError('Frame already contains two rolls');
     expect(game.frame).toEqual([4,3]);
     });
   });
@@ -52,6 +52,19 @@ describe('Game', function(){
         game.addFrame('frame');
       };
       expect(function(){game.addFrame('frame')}).toThrowError('Game already has ten frames');
+    });
+  });
+
+  describe('total score',function(){
+    it('gives total score of current frame', function(){
+    game.addRoll(7);
+    expect(game.totalScore()).toEqual(7);
+    });
+
+    it('gives total score of current frame', function(){
+    game.addRoll(7);
+    game.addRoll(1);
+    expect(game.totalScore()).toEqual(8);
     });
   });
 });

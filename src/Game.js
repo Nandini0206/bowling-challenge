@@ -4,7 +4,7 @@ function Game(){
   this.frames = [];
 };
 
-Game.prototype.addroll = function(pins){
+Game.prototype.addRoll = function(pins){
   if (this.frame.length < 2) {
     this.frame.push(pins);
   } else {
@@ -18,4 +18,8 @@ Game.prototype.addFrame = function(frame){
   } else {
     throw new Error('Game already has ten frames');
   };
+};
+
+Game.prototype.totalScore = function(){
+  return this.frame.reduce((a, c) => a + c, 0)
 };
