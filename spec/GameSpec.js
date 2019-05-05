@@ -11,7 +11,7 @@ describe('Game', function(){
     });
 
     it('has empty frames', function(){
-      expect(game.frame).toEqual([]);
+      expect(game.frames).toEqual([]);
     });
   });
 
@@ -31,7 +31,14 @@ describe('Game', function(){
     game.addroll(4);
     game.addroll(3);
     expect( function(){game.addroll(1)}).toThrowError('Frame already contains two rolls');
-    expect(game.frame).toEqual([4,3])
+    expect(game.frame).toEqual([4,3]);
+    });
+  });
+
+  describe('frame', function(){
+    it('add frame into frames array', function(){
+      game.addFrame('frame');
+      expect(game.frames).toEqual(['frame']);
     });
   });
 });

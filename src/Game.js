@@ -1,6 +1,7 @@
 function Game(){
   this.score = 0;
   this.frame = [];
+  this.frames = [];
 };
 
 Game.prototype.addroll = function(pins){
@@ -9,4 +10,8 @@ Game.prototype.addroll = function(pins){
   } else {
    throw new Error('Frame already contains two rolls')
   };
+};
+
+Game.prototype.addFrame = function(frame){
+  this.frames.push(frame)
 };
