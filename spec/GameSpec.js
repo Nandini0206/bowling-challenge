@@ -10,12 +10,8 @@ describe('Game', function(){
       expect(game.score).toEqual(0);
     });
 
-    it('has 10 frames', function(){
-      expect(game.frames).toEqual(10);
-    });
-
-    it('has 2 rolls per frame', function(){
-      expect(game.rollsPerFrame).toEqual(2);
+    it('has empty frames', function(){
+      expect(game.frames).toEqual([]);
     });
   });
 
@@ -32,11 +28,11 @@ describe('Game', function(){
     });
   });
 
-  // describe('frame', function(){
-  //   it('adds score to frame', function(){
-  //   game.roll(6);
-  //   game.scoreNow(6);
-  //   expect(game.frames).toEqual(6);
-  //   });
-  // });
+  describe('frame', function(){
+    it('adds score to frame', function(){
+    game.roll(6)
+    game.roll(4)
+    expect(game.frames[0]).toContain([6,4]);
+    });
+  });
 });

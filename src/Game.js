@@ -1,7 +1,6 @@
 function Game(){
   this.score = 0;
-  this.frames = 10;
-  this.rollsPerFrame = 2;
+  this.frames = [];
 };
 
 Game.prototype.roll = function(pins){
@@ -12,6 +11,6 @@ Game.prototype.scoreNow = function(){
   return this.score;
 };
 
-// Game.prototype.frames = function(frame){
-//   return this.frames.push(frame)
-// };
+Game.prototype.frame = function(pins){
+  return this.frames.push(pins)
+};
