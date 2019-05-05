@@ -10,8 +10,8 @@ describe('Game', function(){
       expect(game.score).toEqual(0);
     });
 
-    it('starts of with empty frames', function(){
-      expect(game.frames).toEqual([]);
+    it('starts off with 10 frames', function(){
+      expect(game.frames).toEqual(10);
     });
   });
 
@@ -27,4 +27,12 @@ describe('Game', function(){
     expect(game.scoreNow()).toEqual(game.score);
     });
   });
+
+  // describe('frame', function(){
+  //   it('adds score to frame', function(){
+  //   game.roll(6);
+  //   game.scoreNow(6);
+  //   expect(game.frames).toEqual(6);
+  //   });
+  // });
 });

@@ -82,7 +82,8 @@ Reviewers will potentially be using this [code review rubric](docs/review.md).  
 - Started with initial score of 0 and frame of 0
 - Add the pins knocked down on roll to the score.
 - Update this score depending on pins knocked down
-- 
+- Be able to add the 1st and 2nd roll to frame 
+-
 
 ## Logic
 
