@@ -16,11 +16,22 @@ describe('Game', function(){
   });
 
   describe('roll',function(){
-    it('adds rolls to frame', function(){
-    game.roll(6);
-    game.roll(2);
-    expect(game.frame).toContain(6);
-    expect(game.frame).toContain(2);
+    it('adds first roll to frame', function(){
+    game.addroll(6);
+    expect(game.frame).toEqual([6])
+    });
+
+    it('adds second roll to frame', function(){
+    game.addroll(6);
+    game.addroll(2);
+    expect(game.frame).toEqual([6,2]);
+    });
+
+    it('adds no more than 2 rolls to a frame', function(){
+    game.addroll(4);
+    game.addroll(3);
+    expect( function(){game.addroll(1)}).toThrowError('Frame already contains two rolls');
+    expect(game.frame).toEqual([4,3])
     });
   });
 });
