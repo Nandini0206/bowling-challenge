@@ -24,7 +24,7 @@ describe('Game', function(){
 
   describe('scoreNow', function(){
     it('updates score',function(){
-    expect(game.scoreNow).toEqual(game.score);
+    expect(game.scoreNow()).toEqual(game.score);
     });
   });
 });
