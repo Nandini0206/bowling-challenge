@@ -1,4 +1,12 @@
 function Game(){
   this.score = 0;
-  this.frame = [];
+  this.frames = [];
+};
+
+Game.prototype.roll = function(pins){
+    this.score += pins;
+};
+
+Game.prototype.scoreNow = function() {
+  return this.score;
 };
