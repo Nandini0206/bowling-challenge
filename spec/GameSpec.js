@@ -6,12 +6,16 @@ describe('Game', function(){
   });
 
   describe('initialise', function(){
-    it('starts with a score of 0', function(){
+    it('has a score of 0', function(){
       expect(game.score).toEqual(0);
     });
 
-    it('starts off with 10 frames', function(){
+    it('has 10 frames', function(){
       expect(game.frames).toEqual(10);
+    });
+
+    it('has 2 rolls per frame', function(){
+      expect(game.rollsPerFrame).toEqual(2);
     });
   });
 

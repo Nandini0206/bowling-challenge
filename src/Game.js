@@ -1,6 +1,7 @@
 function Game(){
   this.score = 0;
   this.frames = 10;
+  this.rollsPerFrame = 2;
 };
 
 Game.prototype.roll = function(pins){
