@@ -33,6 +33,11 @@ describe('Game', function(){
     expect(function(){game.addRoll(1)}).toThrowError('Frame already contains two rolls');
     expect(game.frame).toEqual([4,3]);
     });
+
+    it('ends frame if first roll is a strike', function(){
+    game.addRoll(10);
+    expect(game.frame).toEqual([10,0]);
+    });
   });
 
   describe('frame', function(){
@@ -53,18 +58,6 @@ describe('Game', function(){
       };
       expect(function(){game.addFrame('frame')}).toThrowError('Game already has ten frames');
     });
-
-    it('returns true if frame is a spare', function(){
-      game.addRoll(6);
-      game.addRoll(4);
-      expect(game.isASpare()).toBe(true);
-    });
-
-    it('returns false if frame is not a spare', function(){
-      game.addRoll(7);
-      game.addRoll(1);
-      expect(game.isASpare()).toBe(false);
-    });
   });
 
   describe('total score',function(){
@@ -77,6 +70,33 @@ describe('Game', function(){
     game.addRoll(7);
     game.addRoll(1);
     expect(game.totalScore()).toEqual(8);
+    });
+  });
+
+  describe('is a spare',function(){
+    it('returns true if frame is a spare', function(){
+    game.addRoll(6);
+    game.addRoll(4);
+    expect(game.isASpare()).toBe(true);
+    });
+
+    it('returns false if frame is not a spare', function(){
+    game.addRoll(7);
+    game.addRoll(1);
+    expect(game.isASpare()).toBe(false);
+    });
+  });
+
+  describe('is a strike',function(){
+    it('returns true if frame is a strike',function(){
+    game.addRoll(10);
+    expect(game.isAStrike()).toBe(true);
+    });
+
+    it('returns false if frame is not a strike',function(){
+    game.addRoll(3);
+    game.addRoll(3);
+    expect(game.isAStrike()).toBe(false);
     });
   });
 });
