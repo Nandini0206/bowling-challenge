@@ -42,8 +42,8 @@ describe('Game', function(){
     });
 
     it('can add more than one frame into frames array', function(){
-      game.addFrame('frame')
-      game.addFrame('frame')
+      game.addFrame('frame');
+      game.addFrame('frame');
       expect(game.frames).toEqual(['frame', 'frame']);
     });
 
@@ -52,6 +52,18 @@ describe('Game', function(){
         game.addFrame('frame');
       };
       expect(function(){game.addFrame('frame')}).toThrowError('Game already has ten frames');
+    });
+
+    it('returns true if frame is a spare', function(){
+      game.addRoll(6);
+      game.addRoll(4);
+      expect(game.isASpare()).toBe(true);
+    });
+
+    it('returns false if frame is not a spare', function(){
+      game.addRoll(7);
+      game.addRoll(1);
+      expect(game.isASpare()).toBe(false);
     });
   });
 

@@ -23,3 +23,11 @@ Game.prototype.addFrame = function(frame){
 Game.prototype.totalScore = function(){
   return this.frame.reduce((a, c) => a + c, 0)
 };
+
+Game.prototype.isASpare = function(){
+  if(this.totalScore() === 10) {
+    return true
+  } else {
+    return false
+  };
+};
